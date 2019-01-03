@@ -1,0 +1,336 @@
+{
+"journeyVer": {
+"_id": "6308096c-9233-47f5-b503-d2c22d38de16",
+"tenantId": "https://acsint4.campaign.adobe.com",
+"authoringFormatVersion": "1.0",
+"uid": "6308096c-9233-47f5-b503-d2c22d38de16",
+"name": "Journey7",
+"metadata": {
+"createdBy": "Suryansh Bhadouria",
+"createdAt": "2018-08-22T15:00:19.144Z",
+"lastModifiedBy": "Suryansh Bhadouria",
+"lastModifiedAt": "2018-08-22T15:01:06.290Z",
+"lastModifiedById": "645F32C45AA8E1700A494215@AdobeID",
+"lastDeployedBy": "Suryansh Bhadouria",
+"lastDeployedById": "645F32C45AA8E1700A494215@AdobeID",
+"lastDeployedAt": "2018-08-22T15:01:13.927Z"
+},
+"ui": {
+"nodes": {
+"start": {
+"id": "start",
+"x": 20,
+"y": 100,
+"size": 8,
+"label": "start",
+"state": [],
+"isSaved": false,
+"isSelected": false,
+"isInvalid": false,
+"type": "start"
+},
+"ed047da3-981f-4c16-a2f3-fd15efb95760": {
+"id": "ed047da3-981f-4c16-a2f3-fd15efb95760",
+"x": 148,
+"y": 100,
+"size": 48,
+"label": "ReportingEvent3",
+"icon": "globe",
+"state": [],
+"isSaved": true,
+"isSelected": false,
+"isInvalid": false,
+"type": "event",
+"name": "a9c6fe3a-a333-4130-baac-20034ce4ce23",
+"data": {
+"tenant": "https://acsint4.campaign.adobe.com",
+"uid": "a9c6fe3a-a333-4130-baac-20034ce4ce23",
+"eventKeyFormula": {
+"type": "eventFieldRef",
+"fieldRef": "json://_id/",
+"dataType": "string",
+"event": "92dc2235d4fccf6adf9268b7241513a6d6ea182bc00063bb6493e1f213642cfc"
+},
+"eventType": "http",
+"fields": {
+"_id": {
+"dataType": "string"
+}
+},
+"metadata": {
+"createdBy": "Suryansh Bhadouria",
+"createdById": "645F32C45AA8E1700A494215@AdobeID",
+"createdAt": "2018-08-22T14:59:55.886Z"
+},
+"name": "ReportingEvent3",
+"namespaceId": "{\"suite\":\"adce2ea.reportsuite1\",\"datacenter\":\"qc\"}",
+"ui": {
+"expression": {
+"eventKeyFormula": "@{ReportingEvent3._id}",
+"condition": ""
+}
+}
+}
+},
+"9171afaa-ca00-4817-87bf-5eb7048491d9": {
+"id": "9171afaa-ca00-4817-87bf-5eb7048491d9",
+"x": 272,
+"y": 100,
+"size": 48,
+"label": "Email",
+"icon": "email",
+"state": [],
+"isSaved": true,
+"isSelected": false,
+"isInvalid": false,
+"type": "action",
+"name": "email",
+"data": {
+"tenant": "https://acsint4.campaign.adobe.com",
+"basic": {
+"name": "Email",
+"description": "Send Email with Adobe Campaign"
+},
+"template": "EVTemailReservation",
+"personal": {
+"firstName": {
+"value": {
+"type": "eventFieldRef",
+"fieldRef": "json://_id/",
+"dataType": "string",
+"event": "newEvent"
+},
+"expression": "// type here your expression\n// example:\n\n// #{Profile.isVIP} == true and #{Profile.age} >= 21\n@{ReportingEvent3._id}"
+},
+"lastName": {
+"value": {
+"type": "eventFieldRef",
+"fieldRef": "json://_id/",
+"dataType": "string",
+"event": "newEvent"
+},
+"expression": "// type here your expression\n// example:\n\n// #{Profile.isVIP} == true and #{Profile.age} >= 21\n@{ReportingEvent3._id}"
+}
+},
+"address": {
+"email": {
+"value": {
+"type": "eventFieldRef",
+"fieldRef": "json://_id/",
+"dataType": "string",
+"event": "newEvent"
+},
+"expression": "// type here your expression\n// example:\n\n// #{Profile.isVIP} == true and #{Profile.age} >= 21\n@{ReportingEvent3._id}"
+}
+},
+"fallbackOnTimeoutOrError": false
+}
+},
+"8c7434b8-f709-47e8-9e28-0cb772ce21a8": {
+"id": "8c7434b8-f709-47e8-9e28-0cb772ce21a8",
+"x": 396,
+"y": 100,
+"size": 48,
+"label": "End",
+"icon": "stopCircle",
+"state": [],
+"isSaved": true,
+"isSelected": false,
+"isInvalid": false,
+"type": "end",
+"name": "end",
+"data": {
+"tenant": "https://acsint4.campaign.adobe.com",
+"name": "End"
+}
+}
+},
+"edges": {
+"6e5402fe-c7f4-4ff8-8853-23cfcbe54953": {
+"id": "6e5402fe-c7f4-4ff8-8853-23cfcbe54953",
+"label": "",
+"labelBoxWidth": 0,
+"source": {
+"elementId": "start",
+"x": 20,
+"y": 100,
+"size": 8
+},
+"target": {
+"elementId": "ed047da3-981f-4c16-a2f3-fd15efb95760",
+"x": 148,
+"y": 100,
+"size": 48
+},
+"connected": true,
+"selected": false
+},
+"edb934ba-7c57-4a4f-a72d-281d40472a9c": {
+"id": "edb934ba-7c57-4a4f-a72d-281d40472a9c",
+"label": "",
+"source": {
+"elementId": "ed047da3-981f-4c16-a2f3-fd15efb95760",
+"x": 148,
+"y": 100,
+"size": 48
+},
+"target": {
+"elementId": "9171afaa-ca00-4817-87bf-5eb7048491d9",
+"x": 272,
+"y": 100,
+"size": 48
+},
+"connected": true,
+"selected": false
+},
+"50862d4a-0d21-4d18-9bd0-839f2ccb7e65": {
+"id": "50862d4a-0d21-4d18-9bd0-839f2ccb7e65",
+"label": "",
+"source": {
+"elementId": "9171afaa-ca00-4817-87bf-5eb7048491d9",
+"x": 272,
+"y": 100,
+"size": 48
+},
+"target": {
+"elementId": "8c7434b8-f709-47e8-9e28-0cb772ce21a8",
+"x": 396,
+"y": 100,
+"size": 48
+},
+"connected": true,
+"selected": false
+}
+}
+},
+"journey": "b391c10d-dd3d-4e7c-af47-73b2005ebb30",
+"journeyVersion": "1.0",
+"initialStep": "start",
+"reentrancePolicy": "reentrance",
+"defaultEntityEnrichmentTimeoutInSecs": 2,
+"defaultActionExecutionTimeoutInSecs": 2,
+"steps": [
+{
+"uid": "start",
+"type": "actionStep",
+"transitions": [
+{
+"uid": "0a7f4941-4276-4d73-b3fa-26e4d55d55f6",
+"targetStep": "9171afaa-ca00-4817-87bf-5eb7048491d9",
+"name": "ReportingEvent3",
+"elementRef": {
+"type": "event",
+"uid": "a9c6fe3a-a333-4130-baac-20034ce4ce23"
+}
+}
+]
+},
+{
+"uid": "9171afaa-ca00-4817-87bf-5eb7048491d9",
+"name": "Email",
+"type": "actionStep",
+"action": {
+"type": "parameterizedAction",
+"uid": "edb934ba-7c57-4a4f-a72d-281d40472a9c",
+"parameterizedActionType": "acsMessageCenter",
+"parameters": {
+"dataProvider": {
+"dataProviderId": "acsDataProvider"
+},
+"eventType": {
+"dataType": "string",
+"value": "EVTemailReservation"
+},
+"email": {
+"expression": {
+"type": "eventFieldRef",
+"fieldRef": "json://_id/",
+"dataType": "string",
+"event": "newEvent"
+}
+},
+"fields": {
+"parameters": {
+"firstName": {
+"expression": {
+"type": "eventFieldRef",
+"fieldRef": "json://_id/",
+"dataType": "string",
+"event": "newEvent"
+}
+},
+"lastName": {
+"expression": {
+"type": "eventFieldRef",
+"fieldRef": "json://_id/",
+"dataType": "string",
+"event": "newEvent"
+}
+}
+}
+}
+}
+},
+"transitions": []
+}
+],
+"state": "deployed",
+"enablements": [],
+"keyNamespace": "{\"suite\":\"adce2ea.reportsuite1\",\"datacenter\":\"qc\"}",
+"orgId": "D71832FC5B0714620A494209@AdobeOrg",
+"canDeploy": {
+"validationStatus": "error",
+"reason": "can't validate a journey version : journey version already deployed"
+}
+},
+"journey": {
+"_id": "b391c10d-dd3d-4e7c-af47-73b2005ebb30",
+"tenantId": "https://acsint4.campaign.adobe.com",
+"name": "Journey7",
+"metadata": {
+"createdBy": "Suryansh Bhadouria",
+"createdById": "645F32C45AA8E1700A494215@AdobeID",
+"createdAt": "2018-08-22T15:00:18.907Z"
+},
+"uid": "b391c10d-dd3d-4e7c-af47-73b2005ebb30",
+"authoringFormatVersion": "1.0",
+"orgId": "D71832FC5B0714620A494209@AdobeOrg",
+"latestJourneyVersion": {
+"uid": "6308096c-9233-47f5-b503-d2c22d38de16",
+"journeyVersion": "1.0",
+"state": "deployed",
+"name": "Journey7",
+"metadata": {
+"createdBy": "Suryansh Bhadouria",
+"createdAt": "2018-08-22T15:00:19.144Z",
+"lastModifiedBy": "Suryansh Bhadouria",
+"lastModifiedAt": "2018-08-22T15:01:06.290Z",
+"lastModifiedById": "645F32C45AA8E1700A494215@AdobeID",
+"lastDeployedBy": "Suryansh Bhadouria",
+"lastDeployedById": "645F32C45AA8E1700A494215@AdobeID",
+"lastDeployedAt": "2018-08-22T15:01:13.927Z"
+},
+"enablements": []
+},
+"state": "deployed",
+"journeyVersions": [
+{
+"uid": "6308096c-9233-47f5-b503-d2c22d38de16",
+"journeyVersion": "1.0",
+"state": "deployed",
+"name": "Journey7",
+"metadata": {
+"createdBy": "Suryansh Bhadouria",
+"createdAt": "2018-08-22T15:00:19.144Z",
+"lastModifiedBy": "Suryansh Bhadouria",
+"lastModifiedAt": "2018-08-22T15:01:06.290Z",
+"lastModifiedById": "645F32C45AA8E1700A494215@AdobeID",
+"lastDeployedBy": "Suryansh Bhadouria",
+"lastDeployedById": "645F32C45AA8E1700A494215@AdobeID",
+"lastDeployedAt": "2018-08-22T15:01:13.927Z"
+},
+"enablements": []
+}
+]
+}
+}
